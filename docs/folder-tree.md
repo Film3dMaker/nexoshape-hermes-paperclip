@@ -10,47 +10,35 @@
 │   └── docs/
 │       └── research.md                  # Ecosystem deep-dive (plugins, adapters, books)
 │
-├── 🏭 noxoshape-workspace/              ← NEXOSHAPE MONOREPO (local only, no remote)
-│   ├── apps/
-│   │   ├── web/                         # Vite + React (nexoshape.com frontend)
-│   │   │   ├── src/
-│   │   │   ├── dist/
-│   │   │   ├── server.js
-│   │   │   ├── index.html
-│   │   │   ├── submissions.jsonl        # 3D print submission data
-│   │   │   └── package.json
-│   │   ├── mobile/                      # React Native / Expo
-│   │   │   ├── app/
-│   │   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── app.json
-│   │   │   └── package.json
-│   │   ├── api/                         # Fastify backend (empty scaffold)
-│   │   └── dashboard/                   # Admin dashboard (empty scaffold)
-│   ├── packages/
-│   │   ├── db/                          # Drizzle ORM + PostgreSQL schema
-│   │   │   ├── src/
-│   │   │   ├── drizzle.config.ts
-│   │   │   └── package.json
-│   │   ├── api-client/
-│   │   ├── config/
-│   │   ├── ui/
-│   │   └── utils/
-│   ├── docs/
-│   │   ├── api/
-│   │   ├── architecture/
-│   │   └── guides/
-│   ├── infra/
-│   │   ├── docker/
-│   │   └── terraform/
-│   ├── scripts/
-│   │   └── deploy-web.sh
-│   ├── .github/
-│   │   ├── workflows/
-│   │   └── ISSUE_TEMPLATE/
-│   ├── package.json
-│   ├── pnpm-workspace.yaml
-│   └── turbo.json
+├── 🏭 noxoshape-workspace/              ← NEXOSHAPE BUSINESS WORKSPACE
+│   ├── README.md                        # Structure overview
+│   ├── web/                             # Instant Quote Engine (Vite + React + Express)
+│   │   ├── src/
+│   │   │   ├── App.tsx                  # 4-step wizard
+│   │   │   ├── main.tsx
+│   │   │   ├── types.ts                 # 7 materials, pricing
+│   │   │   ├── index.css
+│   │   │   └── components/
+│   │   │       ├── FileUpload.tsx
+│   │   │       ├── MaterialSelector.tsx
+│   │   │       ├── PriceEstimate.tsx
+│   │   │       └── QuoteForm.tsx
+│   │   ├── dist/
+│   │   ├── server.js                    # Express API + Formspree integration
+│   │   ├── index.html
+│   │   └── package.json
+│   ├── app/                             # Mobile + workflow docs
+│   │   └── nexoshape-hermes-paperclip/  # Workflow documentation repo
+│   ├── orders/                          # Quotes, invoices, job tracking
+│   ├── customers/                       # CRM data
+│   ├── products/                        # Catalog, pricing sheets
+│   ├── finances/                        # Budgets, revenue, taxes
+│   ├── marketing/                       # Ads, social, branding
+│   ├── operations/                      # Logistics, suppliers, shipping
+│   ├── design/                          # 3D models, STL files, slicer configs
+│   ├── agents/                          # Paperclip CEO/CTO working output
+│   ├── legal/                           # Contracts, terms, privacy
+│   └── docs/                            # Company documentation
 │
 ├── 🤖 hermes-workspace/                 ← HERMES WEB UI (local only, no remote)
 │   ├── src/                             # Vite + React dashboard
@@ -108,6 +96,7 @@
 Port  Service               Systemd Unit
 ────  ────────────────────  ──────────────────────────
 3000  hermes-workspace      (pnpm dev, no systemd yet)
+3001  nexoshape-web         nexoshape-web.service
 3100  paperclip             paperclip.service
 5432  postgresql            postgresql.service
 8642  hermes gateway        hermes-gateway.service (user)
