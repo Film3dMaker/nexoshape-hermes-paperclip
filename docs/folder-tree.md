@@ -10,7 +10,7 @@
 │   └── docs/
 │       └── research.md                  # Ecosystem deep-dive (plugins, adapters, books)
 │
-├── 🏭 noxoshape-workspace/              ← NEXOSHAPE BUSINESS WORKSPACE
+├── 🏭 nexoshape-workspace/              ← NEXOSHAPE BUSINESS WORKSPACE
 │   ├── README.md                        # Structure overview
 │   ├── web/                             # Instant Quote Engine (Vite + React + Express)
 │   │   ├── src/
