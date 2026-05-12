@@ -1,4 +1,4 @@
-# Noxoshape Hermes Paperclip Workflow
+# Nexoshape Hermes Paperclip Workflow
 
 > **"We don't tell agents what to do. We tell them who to be."**
 
